@@ -5,6 +5,13 @@ const project = new AwsCdkTypeScriptApp({
   defaultReleaseBranch: 'main',
   jsiiFqn: 'projen.AwsCdkTypeScriptApp',
   name: 'cdk-ncs-reminder',
+  cdkDependencies: [
+    '@aws-cdk/aws-dynamodb',
+    '@aws-cdk/aws-iam',
+    '@aws-cdk/aws-logs',
+    '@aws-cdk/custom-resources',
+    '@aws-cdk/aws-lambda',
+  ],
 
   /* AwsCdkTypeScriptAppOptions */
   // appEntrypoint: 'main.ts',                                                 /* The CDK app's entrypoint (relative to the source directory, which is "src" by default). */
