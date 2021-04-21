@@ -11,6 +11,7 @@ const project = new AwsCdkTypeScriptApp({
     '@aws-cdk/aws-logs',
     '@aws-cdk/custom-resources',
     '@aws-cdk/aws-lambda',
+    '@aws-cdk/aws-lambda-event-sources',
   ],
 
   /* AwsCdkTypeScriptAppOptions */
