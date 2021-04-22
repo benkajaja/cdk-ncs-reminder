@@ -21,16 +21,6 @@ export class BatchInsertCustomResourceConstruct extends Construct {
 
   constructor(scope: Construct, id: string, props: CdkCallCustomResourceConstructProps) {
     super(scope, id);
-    // this.insertMultipleRecord(props.tableName, props.tableArn, [{
-    //   date: { S: '2021/04' },
-    //   exp: { S: '2021/04/20 12:00' },
-    //   TTL: { N: '1618891200' },
-    // },
-    // {
-    //   date: { S: '2021/05' },
-    //   exp: { S: '2021/07/20 12:00' },
-    //   TTL: { N: '1618891200' },
-    // }]);
     this.insertMultipleRecord(props.tableName, props.tableArn, props.items);
   }
 
@@ -44,10 +34,7 @@ export class BatchInsertCustomResourceConstruct extends Construct {
       parameters: records,
     };
 
-    // const customResource: AwsCustomResource = new AwsCustomResource(this, tableName + '_custom_resource', {
     new AwsCustomResource(this, `${this.node.id}_custom_resource`, {
-      // new AwsCustomResource(this, `${tableName}_custom_resource`, {
-      // new AwsCustomResource(this, 'table_custom_resource', {
       onCreate: awsSdkCall,
       onUpdate: awsSdkCall,
       logRetention: RetentionDays.ONE_WEEK,
