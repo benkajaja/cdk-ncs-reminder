@@ -35,6 +35,7 @@ export class MyStack extends Stack {
       code: lambda.Code.fromAsset('./lambda.zip'),
       environment: {
         ENVMOD: 'DEV', //DEV or PROD
+        SECRETNAME: 'secretsForTG', // name of secret which is stored in secret managers
       },
     });
 

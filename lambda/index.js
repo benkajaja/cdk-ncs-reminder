@@ -7,7 +7,8 @@ const rentDateS = new Date(Date.UTC(now.getFullYear(), now.getMonth() + 1, 1)).t
 const rentDateE = new Date(Date.UTC(now.getFullYear(), now.getMonth() + 2, 0)).toISOString().substr(0, 10); //yyyy-MM-dd
 
 exports.handler = async function (event) {
-  var secret = await mySecrets('secretsForTG');
+  let secretname = process.env.SECRETNAME || "secretsForTG"
+  let secret = await mySecrets(secretname);
   let secretobj = JSON.parse(secret);
   let CHANNEL;
   const ENVMOD = process.env.ENVMOD || "DEV";
