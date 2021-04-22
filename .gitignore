@@ -48,4 +48,3 @@ yarn-error.log*
 !/tsconfig.eslint.json
 !/tsconfig.jest.json
 !/tsconfig.json
-!version.json
