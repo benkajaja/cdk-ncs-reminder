@@ -9,8 +9,22 @@ const rentDateE = new Date(Date.UTC(now.getFullYear(), now.getMonth() + 2, 0)).t
 exports.handler = async function (event) {
   var secret = await mySecrets('secretsForTG');
   let secretobj = JSON.parse(secret);
+  let CHANNEL;
+  const ENVMOD = process.env.ENVMOD || "DEV";
+  switch (ENVMOD){
+    case "PROD":
+      console.log("[DEBUG] PRODMOD");
+      CHANNEL = secretobj.PRODCHANNEL;
+      break;
+    case "DEV":
+      console.log("[DEBUG] DEVMOD");
+      CHANNEL = secretobj.DEVCHANNEL;
+      break;
+    default:
+      console.log("[DEBUG] DEVMOD");
+      CHANNEL = secretobj.DEVCHANNEL;
+  }
   const TOKEN = secretobj.TOKEN;
-  const CHANNEL = secretobj.DEVCHANNEL;
   const tgurl = `https://api.telegram.org/bot${TOKEN}/sendMessage`;
 
   for (let i = 0; i < requestvenueId.length; i++) {

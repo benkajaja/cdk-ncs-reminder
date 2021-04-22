@@ -32,6 +32,9 @@ export class MyStack extends Stack {
       timeout: Duration.seconds(20),
       handler: 'index.handler',
       code: lambda.Code.fromAsset('./lambda.zip'),
+      environment: {
+        ENVMOD: 'DEV', //DEV or PROD
+      },
     });
 
     lambdafn.role!.addManagedPolicy(iam.ManagedPolicy.fromAwsManagedPolicyName('SecretsManagerReadWrite'));
