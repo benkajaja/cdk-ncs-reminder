@@ -19,7 +19,7 @@ export class MyStack extends Stack {
       removalPolicy: RemovalPolicy.DESTROY,
       stream: dynamodb.StreamViewType.NEW_AND_OLD_IMAGES,
     });
-    const items = makeItems(2021, 9, 12);
+    const items = makeItems(2021, 5, 12); // config reminder start date (year, month, duration(#month))
     const custom = new BatchInsertCustomResourceConstruct(this, 'initData', {
       tableArn: ncsTable.tableArn,
       tableName: ncsTable.tableName,
