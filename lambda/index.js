@@ -2,7 +2,7 @@ const request = require('request');
 const peurl = "https://pe.ntu.edu.tw/api/rent/yearuserrent";
 const requestyearUserUnitName = ['資訊工程學系', '資工所', '網媒所'];
 const requestvenueId = ['86', '87', '88', '89'];
-const now = new Date(2021, 11, 19);
+const now = new Date();
 const rentDateS = new Date(Date.UTC(now.getFullYear(), now.getMonth() + 1, 1)).toISOString().substr(0, 10); //yyyy-MM-dd
 const rentDateE = new Date(Date.UTC(now.getFullYear(), now.getMonth() + 2, 0)).toISOString().substr(0, 10); //yyyy-MM-dd
 
