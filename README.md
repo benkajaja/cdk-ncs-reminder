@@ -1,7 +1,7 @@
 # cdk-ncs-reminder
 
 Check whether sticks have been put. If not, it would send a reminder message to telegram channel.
-
+![](images/cdk-ncs-reminder.png)
 
 ## Step
 1. lambda asset
