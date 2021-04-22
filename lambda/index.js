@@ -28,6 +28,10 @@ exports.handler = async function (event) {
   const TOKEN = secretobj.TOKEN;
   const tgurl = `https://api.telegram.org/bot${TOKEN}/sendMessage`;
 
+  console.log(now);
+  console.log(rentDateS);
+  console.log(rentDateE);
+
   for (let i = 0; i < requestvenueId.length; i++) {
     let d = await crawl(requestvenueId[i]);
     let res = checkSticksInData(d);
