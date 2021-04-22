@@ -17,6 +17,7 @@ export class MyStack extends Stack {
       timeToLiveAttribute: 'TTL',
       partitionKey: { name: 'date', type: dynamodb.AttributeType.STRING },
       removalPolicy: RemovalPolicy.DESTROY,
+      stream: dynamodb.StreamViewType.NEW_AND_OLD_IMAGES,
     });
     const items = makeItems(2021, 9, 12);
     const custom = new BatchInsertCustomResourceConstruct(this, 'initData', {
@@ -37,7 +38,13 @@ export class MyStack extends Stack {
       },
     });
 
+    lambdafn.addEventSourceMapping('evsm', {
+      eventSourceArn: ncsTable.tableStreamArn,
+      startingPosition: lambda.StartingPosition.TRIM_HORIZON,
+    });
+
     lambdafn.role!.addManagedPolicy(iam.ManagedPolicy.fromAwsManagedPolicyName('SecretsManagerReadWrite'));
+    lambdafn.role!.addManagedPolicy(iam.ManagedPolicy.fromAwsManagedPolicyName('AWSLambdaInvocation-DynamoDB'));
 
     custom.node.addDependency(ncsTable);
 
