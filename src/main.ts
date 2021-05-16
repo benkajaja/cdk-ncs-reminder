@@ -30,7 +30,7 @@ export class MyStack extends Stack {
       logRetention: RetentionDays.SIX_MONTHS,
       functionName: 'ncs_reminder',
       runtime: lambda.Runtime.NODEJS_10_X,
-      timeout: Duration.seconds(20),
+      timeout: Duration.seconds(60),
       handler: 'index.handler',
       code: lambda.Code.fromAsset('./lambda.zip'),
       environment: {
