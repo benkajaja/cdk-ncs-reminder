@@ -65,7 +65,8 @@ function makeItems(startYear: number, startMonth: number, duration: number) {
   let items = [];
   for (let i = 0; i < duration; i++) {
     // let tmp = new Date(Date.UTC(startYear, startMonth + i - 1, 20, 4, 0)); //UTC 04:00 = GMT+8 12:00
-    let tmp = new Date(Date.UTC(startYear, startMonth + i - 1, 19, 15, 0)); //UTC 15:00 = GMT+8 23:00
+    // let tmp = new Date(Date.UTC(startYear, startMonth + i - 1, 19, 15, 0)); //UTC 15:00 = GMT+8 23:00
+    let tmp = new Date(Date.UTC(startYear, startMonth + i - 1, 19, 10, 0)); //UTC 10:00 = GMT+8 18:00
     items.push({
       date: { S: `${tmp.getFullYear()}/${tmp.getMonth() + 1}` },
       exp: { S: tmp.toString() },
