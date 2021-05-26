@@ -19,7 +19,7 @@
     },
     {
       "name": "aws-cdk",
-      "version": "^1.100.0",
+      "version": "^1.106.0",
       "type": "build"
     },
     {
@@ -52,8 +52,18 @@
       "type": "build"
     },
     {
+      "name": "npm-check-updates",
+      "version": "^11",
+      "type": "build"
+    },
+    {
+      "name": "npm-check-updates",
+      "version": "^11",
+      "type": "build"
+    },
+    {
       "name": "projen",
-      "version": "^0.17.54",
+      "version": "^0.18.11",
       "type": "build"
     },
     {
@@ -67,6 +77,7 @@
     },
     {
       "name": "ts-node",
+      "version": "^9",
       "type": "build"
     },
     {
@@ -75,42 +86,42 @@
     },
     {
       "name": "@aws-cdk/assert",
-      "version": "^1.100.0",
+      "version": "^1.106.0",
       "type": "runtime"
     },
     {
       "name": "@aws-cdk/aws-dynamodb",
-      "version": "^1.100.0",
+      "version": "^1.106.0",
       "type": "runtime"
     },
     {
       "name": "@aws-cdk/aws-iam",
-      "version": "^1.100.0",
+      "version": "^1.106.0",
       "type": "runtime"
     },
     {
       "name": "@aws-cdk/aws-lambda-event-sources",
-      "version": "^1.100.0",
+      "version": "^1.106.0",
       "type": "runtime"
     },
     {
       "name": "@aws-cdk/aws-lambda",
-      "version": "^1.100.0",
+      "version": "^1.106.0",
       "type": "runtime"
     },
     {
       "name": "@aws-cdk/aws-logs",
-      "version": "^1.100.0",
+      "version": "^1.106.0",
       "type": "runtime"
     },
     {
       "name": "@aws-cdk/core",
-      "version": "^1.100.0",
+      "version": "^1.106.0",
       "type": "runtime"
     },
     {
       "name": "@aws-cdk/custom-resources",
-      "version": "^1.100.0",
+      "version": "^1.106.0",
       "type": "runtime"
     }
   ],
