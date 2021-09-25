@@ -1,4 +1,4 @@
-const { AwsCdkTypeScriptApp } = require('projen');
+const { AwsCdkTypeScriptApp, DependenciesUpgradeMechanism, UpgradeDependenciesSchedule } = require('projen');
 
 const project = new AwsCdkTypeScriptApp({
   cdkVersion: '1.106.0',
@@ -13,6 +13,11 @@ const project = new AwsCdkTypeScriptApp({
     '@aws-cdk/aws-lambda',
     '@aws-cdk/aws-lambda-event-sources',
   ],
+  depsUpgrade: DependenciesUpgradeMechanism.githubWorkflow({
+    workflowOptions: {
+      schedule: UpgradeDependenciesSchedule.MONTHLY,
+    },
+  }),
 });
 
 project.synth();
